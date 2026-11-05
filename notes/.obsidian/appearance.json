@@ -1,0 +1,6 @@
+{
+  "theme": "moonstone",
+  "enabledCssSnippets": [
+    "mermaid-horizontal-scroll"
+  ]
+}

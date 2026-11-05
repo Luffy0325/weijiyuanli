@@ -1,0 +1,45 @@
+/*
+ * Note Reading Progress — mobile status bar styling.
+ *
+ * The plugin toggles the body classes below based on user settings:
+ *   - reading-progress-mobile-visible       → show the pill on mobile
+ *   - reading-progress-mobile-hide-others   → hide other status bar items
+ *
+ * Desktop is unaffected; all rules are scoped to .is-mobile.
+ * Selectors use enough specificity (body + multiple classes) to override
+ * Obsidian's default mobile status-bar hiding without relying on !important.
+ */
+
+body.reading-progress-mobile-visible.is-mobile .app-container .status-bar,
+body.reading-progress-mobile-visible.is-mobile.is-focused .app-container .status-bar {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    bottom: 32px;
+    right: 16px;
+    left: auto;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+    color: var(--text-muted);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    pointer-events: none;
+    z-index: 100;
+    background-color: var(--background-primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+body.reading-progress-mobile-visible.is-mobile .app-container .status-bar > .status-bar-item.plugin-reading-progress {
+    display: flex;
+    padding: 0;
+    background: transparent;
+    color: inherit;
+}
+
+body.reading-progress-mobile-hide-others.is-mobile .app-container .status-bar > .status-bar-item:not(.plugin-reading-progress) {
+    display: none;
+}

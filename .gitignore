@@ -1,0 +1,6 @@
+/*
+!/.gitignore
+!/notes/
+
+# Obsidian 的设备本地状态，不纳入版本库
+notes/.obsidian/workspace*.json
