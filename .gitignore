@@ -4,3 +4,6 @@
 
 # Obsidian 的设备本地状态，不纳入版本库
 notes/.obsidian/workspace*.json
+
+# review 文件夹自身的打包副本，内容与 notes/review 重复
+notes/review.zip
